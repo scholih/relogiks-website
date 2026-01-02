@@ -6,29 +6,28 @@ import Link from "next/link";
 const services = [
   {
     title: "RAG & Knowledge Systems",
-    description: "Turn your documents into answers. Custom pipelines that search, retrieve, and respond.",
+    description: "Connect your documents to LLMs. Questions in, answers out. Runs on your infrastructure or ours.",
     href: "/services#rag",
     icon: "🧠",
   },
   {
     title: "AI Automation",
-    description: "Self-hosted n8n workflows with AI agents. No vendor lock-in, full control.",
+    description: "Self-hosted n8n workflows with AI agents. No per-task fees. No third-party access to your data.",
     href: "/services#automation",
     icon: "⚡",
   },
   {
     title: "AI Strategy & Training",
-    description: "Vendor-neutral assessments, roadmaps, and team training for enterprise AI adoption.",
+    description: "Which use cases have ROI. Which don't. What to build, what to buy. No vendor bias.",
     href: "/services#strategy",
     icon: "🎯",
   },
 ];
 
-const trustBadges = [
-  { icon: "🇪🇺", text: "100% EU hosted" },
-  { icon: "🔒", text: "GDPR compliant" },
-  { icon: "🛡️", text: "No US CLOUD Act" },
-  { icon: "🌱", text: "Carbon neutral" },
+const proofPoints = [
+  { text: "LangChain: 90k+ GitHub stars, Sequoia-backed" },
+  { text: "n8n: Used by NASA, Sennheiser, profitable company" },
+  { text: "Same stack as Notion, Replit, Fortune 500s" },
 ];
 
 export default function Home() {
@@ -43,21 +42,25 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <p className="text-[var(--accent-light)] mb-4 text-sm uppercase tracking-wider">
+              Open source AI. Enterprise grade.
+            </p>
             <h1 className="text-4xl md:text-6xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
-              European AI for
+              Enterprise AI that works.
               <br />
-              <span className="text-[var(--text-secondary)]">European Enterprise.</span>
+              <span className="text-[var(--text-secondary)]">Built on components that outperform the alternatives.</span>
             </h1>
-            <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto mb-8">
-              Enterprise RAG, AI automation, and knowledge systems.
-              100% EU infrastructure. Your data never leaves European jurisdiction.
+            <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto mb-8">
+              The best AI tools are no longer locked inside Microsoft or Google.
+              LangChain, n8n, pgvector — these open-source components match or exceed
+              proprietary alternatives. We integrate them for enterprise use.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="px-6 py-3 bg-[var(--text-primary)] text-[var(--bg-primary)] font-medium rounded-lg hover:bg-[var(--text-secondary)] transition-colors"
               >
-                Schedule a call
+                Get in touch
               </Link>
               <Link
                 href="/services"
@@ -67,21 +70,24 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Trust badges */}
+      {/* Proof Points */}
+      <section className="py-12 border-y border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-16 flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center gap-8 md:gap-16"
           >
-            {trustBadges.map((badge) => (
+            {proofPoints.map((point) => (
               <div
-                key={badge.text}
-                className="flex items-center gap-2 px-4 py-2 bg-[var(--bg-secondary)] rounded-full border border-[var(--border)]"
+                key={point.text}
+                className="text-sm text-[var(--text-secondary)]"
               >
-                <span className="text-lg">{badge.icon}</span>
-                <span className="text-sm text-[var(--text-secondary)]">{badge.text}</span>
+                {point.text}
               </div>
             ))}
           </motion.div>
@@ -99,10 +105,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
-              What we do
+              What we build
             </h2>
             <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Practical AI solutions for European enterprise. No hype, no lock-in.
+              State-of-the-art components. Your infrastructure. Full ownership.
             </p>
           </motion.div>
 
@@ -117,7 +123,7 @@ export default function Home() {
               >
                 <Link
                   href={service.href}
-                  className="block p-6 bg-[var(--bg-primary)] rounded-xl border border-[var(--border)] hover:border-[var(--accent)] transition-colors group"
+                  className="block p-6 bg-[var(--bg-primary)] rounded-xl border border-[var(--border)] hover:border-[var(--accent)] transition-colors group h-full"
                 >
                   <span className="text-3xl mb-4 block">{service.icon}</span>
                   <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-light)] transition-colors">
@@ -131,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EU Commitment Section */}
+      {/* Why This Stack Section */}
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -139,33 +145,52 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border)] p-8 md:p-12"
+            className="grid md:grid-cols-2 gap-12 items-center"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <span className="text-4xl">🇪🇺</span>
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)]">
-                Your data never leaves Europe.
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-6">
+                The integration problem is solved.
               </h2>
+              <div className="space-y-4 text-[var(--text-secondary)]">
+                <p>
+                  The old objection to best-of-breed: stitching components together
+                  took armies of engineers and months of work.
+                </p>
+                <p>
+                  That objection is gone. Modern development approaches have compressed
+                  what used to take teams of 8 engineers two sprints into days of work.
+                </p>
+                <p>
+                  What you get: state-of-the-art AI capabilities, no vendor lock-in,
+                  full ownership of your stack.
+                </p>
+              </div>
             </div>
-            <p className="text-[var(--text-secondary)] text-lg mb-8 max-w-3xl">
-              Every component of our infrastructure is hosted in the European Union.
-              No US CLOUD Act exposure. No data transfers outside European jurisdiction.
-              Full GDPR compliance by design, not by checkbox.
-            </p>
-            <Link
-              href="/about#eu-commitment"
-              className="inline-flex items-center gap-2 text-[var(--text-primary)] font-medium hover:text-[var(--accent-light)] transition-colors"
-            >
-              Learn more about our EU commitment
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+            <div className="space-y-4">
+              <div className="p-4 bg-[var(--bg-secondary)] rounded-lg border border-[var(--border)]">
+                <h4 className="font-medium text-[var(--text-primary)] mb-1">What you avoid</h4>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  Pricing surprises. Forced upgrades. Dependency on roadmaps you don't control.
+                </p>
+              </div>
+              <div className="p-4 bg-[var(--bg-secondary)] rounded-lg border border-[var(--border)]">
+                <h4 className="font-medium text-[var(--text-primary)] mb-1">What you keep</h4>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  Source code. Infrastructure access. The ability to walk away or switch vendors.
+                </p>
+              </div>
+              <div className="p-4 bg-[var(--bg-secondary)] rounded-lg border border-[var(--border)]">
+                <h4 className="font-medium text-[var(--text-primary)] mb-1">Practical benefit</h4>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  Runs in EU infrastructure. No GDPR paperwork. No data transfer agreements.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* CTA Section */}
       <section className="py-24 bg-[var(--bg-secondary)]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <motion.div
@@ -175,25 +200,18 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
-              Weekly AI Digest
+              You've seen the hype. Here's what actually works.
             </h2>
             <p className="text-[var(--text-secondary)] max-w-xl mx-auto mb-8">
-              Curated news on RAG, AI automation, and European enterprise tech.
-              No spam, unsubscribe anytime.
+              No sales pitch. We'll assess your situation, tell you what's realistic,
+              and be honest about what doesn't make sense.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 px-4 py-3 bg-[var(--bg-primary)] border border-[var(--border)] rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)]"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-[var(--text-primary)] text-[var(--bg-primary)] font-medium rounded-lg hover:bg-[var(--text-secondary)] transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <Link
+              href="/contact"
+              className="inline-block px-6 py-3 bg-[var(--text-primary)] text-[var(--bg-primary)] font-medium rounded-lg hover:bg-[var(--text-secondary)] transition-colors"
+            >
+              Get in touch
+            </Link>
           </motion.div>
         </div>
       </section>

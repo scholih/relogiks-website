@@ -8,55 +8,32 @@ const services = [
     id: "rag",
     icon: "🧠",
     title: "RAG & Knowledge Systems",
-    headline: "Turn your documents into answers",
-    problem:
-      "Your organization's knowledge is scattered across PDFs, wikis, SharePoint, emails, and legacy systems. Finding the right information takes hours. New hires struggle to get up to speed. Institutional knowledge walks out the door with every departure.",
-    solution:
-      "We build custom RAG (Retrieval-Augmented Generation) pipelines that connect to your existing document stores, understand context, and deliver accurate answers in seconds. No more keyword searches. No more endless scrolling. Just answers.",
-    useCases: [
-      "Legal document search and analysis",
-      "Internal policy Q&A for HR and compliance",
-      "Technical manual lookup for support teams",
-      "Research paper synthesis for R&D",
-      "Contract clause extraction and comparison",
-    ],
-    differentiator: "EU-hosted infrastructure. GDPR-compliant by design. Your documents never leave European jurisdiction.",
+    headline: "Connect your documents to LLMs",
+    stack: "LangChain (90k+ GitHub stars, Sequoia-backed), pgvector or Qdrant for embeddings, your choice of LLM. Same components Notion, Replit, and Fortune 500 companies run in production.",
+    integration: "Already running OpenSearch or Elasticsearch? We bolt vector search and RAG capabilities on top. Existing Lucene indexes stay in place. Same for your document stores, SharePoint, or cloud storage. No rip-and-replace. Extend what works.",
+    containment: "We build RAG systems that run entirely within your infrastructure. No external API calls. No data leaving your network. Local LLMs like Llama or Mistral, local embeddings, local vector store. For sensitive environments, this isn't a feature — it's a requirement.",
+    avoid: "Microsoft Copilot doesn't let you see how it retrieves. OpenAI's assistants API locks your data in their infrastructure. With this stack, you control the retrieval logic, the embedding model, and where your documents live.",
+    benefit: "Runs in EU infrastructure, entirely on-premise, or hybrid. Your data, your rules.",
   },
   {
     id: "automation",
     icon: "⚡",
     title: "AI Automation",
-    headline: "Automate without vendor lock-in",
-    problem:
-      "Manual processes drain your team's time. SaaS automation tools are expensive and send your data to US servers. You want AI-powered workflows but can't trust black-box solutions with sensitive business data.",
-    solution:
-      "Self-hosted n8n workflows with AI agents running on your infrastructure—or ours in the EU. Connect any system, automate complex decisions, and maintain full control. Open source foundation, no per-seat pricing.",
-    useCases: [
-      "Lead enrichment and scoring",
-      "Automated report generation",
-      "Inbox triage and response drafting",
-      "Data pipeline orchestration",
-      "Document processing and extraction",
-    ],
-    differentiator: "Open source. Self-hosted. Your infrastructure, your rules.",
+    headline: "Workflow automation with AI agents",
+    stack: "n8n (40k+ GitHub stars, profitable company, used by NASA and Sennheiser), connected to any LLM. Your workflows, your infrastructure, your data.",
+    what: "n8n is workflow automation — think Zapier, but self-hosted and extensible. Add LLM nodes and you get AI agents that can read emails, extract data, make decisions, and take action.",
+    avoid: "Zapier charges per task. Make.com stores your credentials on US servers. With n8n, you pay once for hosting. No per-execution fees. No third-party access to your API keys.",
+    benefit: "Self-hosted means self-controlled. Runs where you want it.",
   },
   {
     id: "strategy",
     icon: "🎯",
     title: "AI Strategy & Training",
-    headline: "Know what AI can (and can't) do for you",
-    problem:
-      "The hype is deafening. Every vendor promises transformation. Your team has ideas but no framework to evaluate them. Pilots fail because expectations don't match reality. Budget gets wasted on solutions looking for problems.",
-    solution:
-      "Vendor-neutral assessment of your AI opportunities. We identify high-impact, feasible use cases—and tell you what won't work. Clear roadmaps. Realistic timelines. Team training that builds lasting capability.",
-    useCases: [
-      "Executive AI workshops",
-      "Use case identification and prioritization",
-      "Build vs. buy analysis",
-      "Team capability assessments",
-      "AI readiness audits",
-    ],
-    differentiator: "Vendor-neutral. EU-focused. We recommend what works, not what pays us.",
+    headline: "Which use cases have ROI. Which don't.",
+    what: "Assessment of where AI fits in your organization. What your team needs to learn. What you should build vs. buy.",
+    approach: "No vendor partnerships. No referral fees. We recommend what works, even if that's a Microsoft product. Usually it isn't — but we'll tell you when it is.",
+    avoid: "Consultants who recommend whatever they're certified to sell. Hype cycles disguised as strategy. Pilots that go nowhere.",
+    benefit: "Decisions based on your constraints, not our partnerships.",
   },
 ];
 
@@ -64,22 +41,22 @@ const processSteps = [
   {
     number: "01",
     title: "Discovery",
-    description: "We map your current state, pain points, and opportunities. No sales pitch—just understanding.",
+    description: "We map what you have. Existing infrastructure, data sources, security constraints, team capabilities. No pre-packaged solutions.",
   },
   {
     number: "02",
-    title: "Design",
-    description: "Architecture and approach tailored to your constraints. Security, compliance, and integration considered from day one.",
+    title: "Scope",
+    description: "Clear scope. Fixed price where possible. We tell you what's realistic and what isn't — even if that means less work for us.",
   },
   {
     number: "03",
-    title: "Deliver",
-    description: "Iterative implementation with your team involved. Working software, not slide decks.",
+    title: "Build",
+    description: "We work fast. Projects that traditionally required large teams and long timelines now take a fraction of that. Working software, not slide decks.",
   },
   {
     number: "04",
-    title: "Support",
-    description: "Handover with documentation and training. Ongoing support as needed. Your system, your control.",
+    title: "Handover",
+    description: "You own the result. Full documentation. Source code. Infrastructure access. No lock-in to us either.",
   },
 ];
 
@@ -95,104 +72,185 @@ export default function ServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
-              AI that works for European enterprise
-            </h1>
-            <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-              Practical solutions. EU infrastructure. No hype, no lock-in.
+            <p className="text-[var(--accent-light)] mb-4 text-sm uppercase tracking-wider">
+              What we build
             </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
+              State-of-the-art components.
+              <br />
+              <span className="text-[var(--text-secondary)]">Your infrastructure. Full ownership.</span>
+            </h1>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Detail Sections */}
-      {services.map((service, index) => (
-        <section
-          key={service.id}
-          id={service.id}
-          className={`py-24 ${index % 2 === 0 ? "bg-[var(--bg-secondary)]" : ""}`}
-        >
-          <div className="max-w-6xl mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              {/* Service Header */}
-              <div className="flex items-start gap-4 mb-8">
-                <span className="text-5xl">{service.icon}</span>
+      {/* RAG Section */}
+      <section id="rag" className="py-24 bg-[var(--bg-secondary)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-start gap-4 mb-8">
+              <span className="text-5xl">{services[0].icon}</span>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-2">
+                  {services[0].title}
+                </h2>
+                <p className="text-xl text-[var(--accent-light)]">{services[0].headline}</p>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div className="space-y-6">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-2">
-                    {service.title}
-                  </h2>
-                  <p className="text-xl text-[var(--accent-light)]">{service.headline}</p>
-                </div>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-12">
-                {/* Problem & Solution */}
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
-                      The Problem
-                    </h3>
-                    <p className="text-[var(--text-secondary)] leading-relaxed">
-                      {service.problem}
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
-                      Our Solution
-                    </h3>
-                    <p className="text-[var(--text-secondary)] leading-relaxed">
-                      {service.solution}
-                    </p>
-                  </div>
-                  <div className="pt-4">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--bg-primary)] rounded-full border border-[var(--border)]">
-                      <span className="text-lg">🇪🇺</span>
-                      <span className="text-sm text-[var(--text-secondary)]">
-                        {service.differentiator}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Use Cases */}
-                <div className="bg-[var(--bg-primary)] rounded-xl border border-[var(--border)] p-6 lg:p-8">
-                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-4">
-                    Use Cases
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    The stack
                   </h3>
-                  <ul className="space-y-3">
-                    {service.useCases.map((useCase, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <svg
-                          className="w-5 h-5 text-[var(--accent-light)] flex-shrink-0 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-[var(--text-secondary)]">{useCase}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="text-[var(--text-secondary)]">{services[0].stack}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    Integrates with what you have
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[0].integration}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    Full containment option
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[0].containment}</p>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </section>
-      ))}
+              <div className="space-y-6">
+                <div className="p-6 bg-[var(--bg-primary)] rounded-xl border border-[var(--border)]">
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    What you avoid
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[0].avoid}</p>
+                </div>
+                <div className="p-6 bg-[var(--bg-primary)] rounded-xl border border-[var(--border)]">
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    Practical benefit
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[0].benefit}</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Automation Section */}
+      <section id="automation" className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-start gap-4 mb-8">
+              <span className="text-5xl">{services[1].icon}</span>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-2">
+                  {services[1].title}
+                </h2>
+                <p className="text-xl text-[var(--accent-light)]">{services[1].headline}</p>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    What it is
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[1].what}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    The stack
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[1].stack}</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="p-6 bg-[var(--bg-secondary)] rounded-xl border border-[var(--border)]">
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    What you avoid
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[1].avoid}</p>
+                </div>
+                <div className="p-6 bg-[var(--bg-secondary)] rounded-xl border border-[var(--border)]">
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    Practical benefit
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[1].benefit}</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Strategy Section */}
+      <section id="strategy" className="py-24 bg-[var(--bg-secondary)]">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-start gap-4 mb-8">
+              <span className="text-5xl">{services[2].icon}</span>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-2">
+                  {services[2].title}
+                </h2>
+                <p className="text-xl text-[var(--accent-light)]">{services[2].headline}</p>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    What it is
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[2].what}</p>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    The approach
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[2].approach}</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div className="p-6 bg-[var(--bg-primary)] rounded-xl border border-[var(--border)]">
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    What you avoid
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[2].avoid}</p>
+                </div>
+                <div className="p-6 bg-[var(--bg-primary)] rounded-xl border border-[var(--border)]">
+                  <h3 className="text-sm font-semibold text-[var(--accent)] uppercase tracking-wider mb-3">
+                    Practical benefit
+                  </h3>
+                  <p className="text-[var(--text-secondary)]">{services[2].benefit}</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Process Section */}
-      <section className="py-24 bg-[var(--bg-secondary)]">
+      <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -204,9 +262,6 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
               How we work
             </h2>
-            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              A straightforward process focused on understanding your needs and delivering results.
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -232,6 +287,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* What we don't do */}
+      <section className="py-24 bg-[var(--bg-secondary)]">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-8">
+              What we don't do
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                "Multi-month discovery phases",
+                "Hourly billing that rewards slowness",
+                "Solutions that require us to operate them",
+                "Vendor partnerships that bias our recommendations",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 p-4 bg-[var(--bg-primary)] rounded-lg border border-[var(--border)]"
+                >
+                  <span className="text-[var(--accent)]">✕</span>
+                  <span className="text-[var(--text-secondary)]">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
@@ -243,24 +330,24 @@ export default function ServicesPage() {
             className="bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border)] p-8 md:p-12 text-center"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
-              Ready to talk?
+              Have a project in mind?
             </h2>
             <p className="text-[var(--text-secondary)] max-w-xl mx-auto mb-8">
-              No sales pitch. Let&apos;s discuss your challenges and see if we can help.
-              30 minutes, no commitment.
+              We'll tell you what's realistic and what isn't.
+              No sales pitch — just an honest assessment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="px-6 py-3 bg-[var(--text-primary)] text-[var(--bg-primary)] font-medium rounded-lg hover:bg-[var(--text-secondary)] transition-colors"
               >
-                Schedule a call
+                Get in touch
               </Link>
               <a
                 href="mailto:info@relogiks.eu"
                 className="px-6 py-3 border border-[var(--border)] text-[var(--text-primary)] font-medium rounded-lg hover:bg-[var(--bg-secondary)] transition-colors"
               >
-                Send an email
+                info@relogiks.eu
               </a>
             </div>
           </motion.div>
