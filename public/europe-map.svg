@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#6B7280" stroke-width="2">
+  <!-- Simplified Europe outline -->
+  <path d="
+    M 350 80
+    L 380 85 L 420 75 L 460 80 L 500 70 L 540 85
+    L 560 100 L 580 95 L 600 110 L 620 100 L 650 120
+    L 660 150 L 680 170 L 670 200 L 690 230 L 680 260
+    L 660 280 L 670 310 L 650 340 L 630 360 L 640 390
+    L 620 420 L 590 430 L 560 450 L 530 440 L 500 460
+    L 470 450 L 440 470 L 410 460 L 380 480 L 350 470
+    L 320 490 L 290 480 L 260 500 L 230 490 L 200 510
+    L 180 490 L 160 470 L 140 450 L 130 420 L 120 390
+    L 110 360 L 120 330 L 110 300 L 130 270 L 120 240
+    L 140 210 L 130 180 L 150 150 L 170 130 L 200 120
+    L 230 100 L 260 110 L 290 95 L 320 100 L 350 80
+    Z
+  " stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- UK -->
+  <path d="
+    M 180 180 L 200 160 L 220 170 L 230 200 L 220 230 L 200 250 L 180 240 L 170 210 Z
+  " stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Ireland -->
+  <path d="
+    M 130 200 L 150 190 L 160 210 L 155 240 L 140 250 L 125 230 Z
+  " stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Scandinavia -->
+  <path d="
+    M 380 50 L 400 30 L 420 40 L 440 25 L 470 35 L 490 50 L 480 80 L 460 100 L 440 90 L 420 110 L 400 95 L 380 80 Z
+  " stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Network nodes representing major cities -->
+  <circle cx="250" cy="280" r="6" fill="#6B7280"/>
+  <circle cx="350" cy="250" r="6" fill="#6B7280"/>
+  <circle cx="420" cy="300" r="6" fill="#6B7280"/>
+  <circle cx="500" cy="270" r="6" fill="#6B7280"/>
+  <circle cx="380" cy="350" r="6" fill="#6B7280"/>
+  <circle cx="300" cy="380" r="6" fill="#6B7280"/>
+  <circle cx="550" cy="350" r="6" fill="#6B7280"/>
+  <!-- Connection lines between nodes -->
+  <line x1="250" y1="280" x2="350" y2="250" stroke-dasharray="6 6"/>
+  <line x1="350" y1="250" x2="420" y2="300" stroke-dasharray="6 6"/>
+  <line x1="420" y1="300" x2="500" y2="270" stroke-dasharray="6 6"/>
+  <line x1="350" y1="250" x2="380" y2="350" stroke-dasharray="6 6"/>
+  <line x1="380" y1="350" x2="300" y2="380" stroke-dasharray="6 6"/>
+  <line x1="420" y1="300" x2="550" y2="350" stroke-dasharray="6 6"/>
+  <line x1="500" y1="270" x2="550" y2="350" stroke-dasharray="6 6"/>
+</svg>
